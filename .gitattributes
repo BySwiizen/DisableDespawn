@@ -1,0 +1,9 @@
+* text=AUTO
+
+*.java text diff=JAVA
+*.gradle text diff=JAVA
+*.sh text eol=LF
+gradlew text eol=LF
+*.bat text eol=CRLF
+
+*.jar binary
