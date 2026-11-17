@@ -1,7 +1,6 @@
 package fr.byswiizen.disabledespawn.listener;
 
-import org.bukkit.Bukkit;
-import org.bukkit.entity.Item;
+import fr.byswiizen.disabledespawn.DisableDespawn;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.ItemSpawnEvent;
@@ -9,14 +8,16 @@ import org.bukkit.event.entity.ItemSpawnEvent;
 
 public class ItemSpawnListener implements Listener {
 	
+	public DisableDespawn plugin;
+	public ItemSpawnListener(DisableDespawn instance) {
+		this.plugin = instance;
+	}
+	
 	
 	@EventHandler
 	public void onItemSpawn(ItemSpawnEvent event) {
-		event.getEntity().setUnlimitedLifetime(true);
-		
-		// TEST
-		Item item = event.getEntity();
-		item.setTicksLived(11990);
-		Bukkit.getLogger().info("Test item" + item.isUnlimitedLifetime());
+		if (DisableDespawn.configfile.getBoolean("disable-despawn")) {
+			event.getEntity().setUnlimitedLifetime(true);
+		}
 	}
 }

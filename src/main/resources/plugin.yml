@@ -9,3 +9,13 @@ api-version: ${apiversion}
 
 load: POSTWORLD
 folia-supported: true
+
+
+commands:
+    disabledespawn:
+        description: Main command of DisableDespawn
+        usage: /<command>
+permissions:
+    disabledespawn.reload:
+        description: Reload permission of DisableDespawn
+        default: op

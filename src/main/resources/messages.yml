@@ -1,0 +1,5 @@
+prefix: '&6DisableDespawn &7»'
+reload-success: '&aThe configuration files have been reloaded.'
+help:
+  - '&e/disabledespawn reload &0- &fReloads the plugin configuration files.'
+  - '&e/disabledespawn help &0- &fDisplays the help command.'
